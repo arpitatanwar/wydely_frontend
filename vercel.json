@@ -1,0 +1,13 @@
+{
+    "buildCommand": "cd Wydely-Whatsapp && npm run build",
+    "outputDirectory": "Wydely-Whatsapp/.expo/web",
+    "devCommand": "cd Wydely-Whatsapp && npm run web",
+    "installCommand": "cd Wydely-Whatsapp && npm install",
+    "framework": null,
+    "rewrites": [
+        {
+            "source": "/(.*)",
+            "destination": "/index.html"
+        }
+    ]
+}

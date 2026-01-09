@@ -4,8 +4,10 @@ This project is configured for deployment on Vercel.
 
 ## Configuration Files
 
-- `vercel.json` - Vercel deployment configuration
+- `vercel.json` (at root) - Vercel deployment configuration with automatic directory handling
 - `package.json` - Contains the `build` script for production builds
+- `.nvmrc` - Specifies Node.js version 18
+- `engines` field in `package.json` - Ensures Node.js >= 18.0.0
 
 ## Deployment Steps
 
@@ -14,13 +16,14 @@ This project is configured for deployment on Vercel.
 1. Go to [vercel.com](https://vercel.com) and sign in
 2. Click "Add New Project"
 3. Import your GitHub repository: `arpitatanwar/wydely_frontend`
-4. Configure the project:
-   - **Root Directory**: Set to `Wydely-Whatsapp` (since the project is in a subdirectory)
-   - **Framework Preset**: Other (or leave as default)
-   - **Build Command**: `npm run build` (already configured in vercel.json)
-   - **Output Directory**: `.expo/web` (already configured in vercel.json)
-   - **Install Command**: `npm install` (already configured in vercel.json)
+4. Vercel will automatically detect the `vercel.json` configuration:
+   - **Build Command**: `cd Wydely-Whatsapp && npm run build` (auto-configured)
+   - **Output Directory**: `Wydely-Whatsapp/.expo/web` (auto-configured)
+   - **Install Command**: `cd Wydely-Whatsapp && npm install` (auto-configured)
+   - **Node Version**: 18 (specified in `.nvmrc` and `package.json`)
 5. Click "Deploy"
+
+**Note**: You can optionally set **Root Directory** to `Wydely-Whatsapp` in the dashboard, but it's not required as the commands handle the directory change automatically.
 
 ### Option 2: Deploy via Vercel CLI
 
@@ -47,8 +50,10 @@ Once connected to Vercel, every push to your main branch will automatically trig
 
 ## Important Notes
 
-- The build output directory is `.expo/web` (configured in vercel.json)
+- The build output directory is `Wydely-Whatsapp/.expo/web` (configured in vercel.json at root)
+- All commands automatically change into the `Wydely-Whatsapp` directory
 - The project uses Expo SDK 52 with Metro bundler
+- Node.js version 18 is specified via `.nvmrc` and `package.json` engines field
 - Make sure all environment variables (if any) are configured in Vercel's project settings
 - The app will be accessible via a Vercel URL after deployment
 
