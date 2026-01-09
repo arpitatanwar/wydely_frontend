@@ -2,7 +2,7 @@
     "buildCommand": "cd Wydely-Whatsapp && npm run build",
     "outputDirectory": "Wydely-Whatsapp/.expo/web",
     "devCommand": "cd Wydely-Whatsapp && npm run web",
-    "installCommand": "cd Wydely-Whatsapp && npm install",
+    "installCommand": "cd Wydely-Whatsapp && bash install.sh",
     "framework": null,
     "rewrites": [
         {
