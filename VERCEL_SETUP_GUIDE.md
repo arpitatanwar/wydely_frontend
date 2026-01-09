@@ -53,10 +53,12 @@ After importing, you'll see the **"Configure Project"** page. Here's what to set
 
 The following settings should be **automatically detected** from your `vercel.json` file:
 
-- **Build Command**: `cd Wydely-Whatsapp && npm run build`
-- **Output Directory**: `Wydely-Whatsapp/.expo/web`
-- **Install Command**: `cd Wydely-Whatsapp && bash install.sh`
-- **Development Command**: `cd Wydely-Whatsapp && npm run web`
+- **Build Command**: `npm run build`
+- **Output Directory**: `.expo/web`
+- **Install Command**: `bash install.sh`
+- **Development Command**: `npm run web`
+
+**Important**: Since you set the Root Directory to `Wydely-Whatsapp`, Vercel will automatically run all commands from that directory, so the commands in `vercel.json` don't need to include `cd Wydely-Whatsapp`.
 
 **Note**: If these aren't auto-detected, you can manually enter them, but they should appear automatically.
 
@@ -203,9 +205,9 @@ When configuring your project, these are the key settings:
 |---------|-------|
 | **Root Directory** | `Wydely-Whatsapp` |
 | **Framework Preset** | Other / No Framework |
-| **Build Command** | `cd Wydely-Whatsapp && npm run build` |
-| **Output Directory** | `Wydely-Whatsapp/.expo/web` |
-| **Install Command** | `cd Wydely-Whatsapp && bash install.sh` |
+| **Build Command** | `npm run build` |
+| **Output Directory** | `.expo/web` |
+| **Install Command** | `bash install.sh` |
 | **Node Version** | 18 (from `.nvmrc`) |
 
 ---
