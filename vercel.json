@@ -1,13 +1,8 @@
 {
-    "buildCommand": "npm run build",
-    "outputDirectory": ".expo/web",
-    "devCommand": "npm run web",
-    "installCommand": "bash install.sh",
-    "framework": null,
-    "rewrites": [
-        {
-            "source": "/(.*)",
-            "destination": "/index.html"
-        }
-    ]
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
+  ]
 }
